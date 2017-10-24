@@ -4,19 +4,19 @@ const Schema = mongoose.Schema
 const conventionSchema = new Schema({
   name: {
     type: String,
-    required:true
+    required: true
   },
   address: {
     type: String,
-    required:true
+    required: true
   },
-  phoneNumber: {
-    type: String,
-    required:true
+  date: {
+    type: Date,
+    required: true
   },
-  email: {
+  description: {
     type: String,
-    required:true
+    required: true
   }
 })
 
@@ -36,13 +36,13 @@ module.exports = {
     Convention.findById(id,callback);
   },
 
-  addConvention: function(company, callback) {
-    Convention.create(company, callback)
+  addConvention: function(convention, callback) {
+    Convention.create(convention, callback)
   },
 
-  updateConventionInfo: function(id, company, options, callback) {
+  updateConventionInfo: function(id, convention, options, callback) {
     let query = {_id:id};
-    Convention.findOneAndUpdate(query, company, options, callback);
+    Convention.findOneAndUpdate(query, convention, options, callback);
   },
 
   deleteConventionInfo: function(id, callback) {
