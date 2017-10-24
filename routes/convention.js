@@ -11,6 +11,15 @@ router.get('/', (req,res) => {
   });
 })
 
+router.get('/', (req,res) => {
+  Convention.getAllConvention((err,conventions) => {
+    if(err){
+      res.json("convention not found.");
+    }
+    res.json(conventions);
+  });
+})
+
 router.get('/:id', (req,res) => {
   let id = req.params.id;
   Convention.getConventionById(id, (err,convention) => {

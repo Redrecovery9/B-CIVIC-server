@@ -28,6 +28,10 @@ module.exports = {
     Convention.find(callback).limit(1)
   },
 
+  getAllConvention: function(callback) {
+    Convention.find(callback)
+  },
+
   getConventionById: function(id, callback) {
     Convention.findById(id,callback);
   },
