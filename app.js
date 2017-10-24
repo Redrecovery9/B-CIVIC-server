@@ -8,8 +8,8 @@ const cors = require('cors');
 const mongoose = require('mongoose')
 
 // DataBase locations
-mongoose.connect('mongodb://bcivic-server.herokuapp.com/test', {useMongoClient: true});
-// mongoose.connect('mongodb://localhost/bcivic', {useMongoClient: true});
+mongoose.connect('mongodb://mongolab-round-53313/test', {useMongoClient: true});
+// mongoose.connect('mongodb://mongolab-round-53313/bcivic', {useMongoClient: true});
 
 const index = require('./routes/index');
 const users = require('./routes/users');
