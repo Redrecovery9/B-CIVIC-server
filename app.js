@@ -6,7 +6,10 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose')
+
+// DataBase locations
 mongoose.connect('mongodb://localhost/test', {useMongoClient: true});
+// mongoose.connect('mongodb://localhost/bcivic', {useMongoClient: true});
 
 const index = require('./routes/index');
 const users = require('./routes/users');

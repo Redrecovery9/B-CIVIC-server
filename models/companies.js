@@ -2,18 +2,34 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const companySchema = new Schema({
-  name: String,
-  address: String,
-  phoneNumber: String,
-  email: String
+  name: {
+    type: String,
+    required:true
+  },
+  address: {
+    type: String,
+    required:true
+  },
+  phoneNumber: {
+    type: String,
+    required:true
+  },
+  email: {
+    type: String,
+    required:true
+  }
 })
 
 
-module.exports= mongoose.model('Company', companySchema)
+const Company = module.exports= mongoose.model('company', companySchema)
 
 module.exports = {
-  getCompany: function(callback, limit) {
+  getCompany: function(callback) {
     Company.find(callback).limit(3)
+  },
+
+  getAllCompany: function(callback) {
+    Company.find(callback)
   },
 
   getCompanyById: function(id, callback) {
@@ -21,10 +37,10 @@ module.exports = {
   },
 
   addCompany: function(company, callback) {
-    company.create(company, callback)
+    Company.create(company, callback)
   },
 
-  updateBabyInfo: function(id, company, options, callback) {
+  updateCompanyInfo: function(id, company, options, callback) {
     let query = {_id:id};
     Company.findOneAndUpdate(query, company, options, callback);
   },
