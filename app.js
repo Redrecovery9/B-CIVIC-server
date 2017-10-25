@@ -11,11 +11,12 @@ const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/test', {useMongoClient: true});
 // mongoose.connect('mongodb://heroku_p9c01m84:21tse1t3l9mgrchdr0kvemvcn@ds231205.mlab.com:31205/heroku_p9c01m84', {useMongoClient: true});
 
-const index = require('./routes/index');
-const users = require('./routes/users');
+const index = require('./routes/index')
+const users = require('./routes/users')
 const company = require('./routes/company')
 const convention = require('./routes/convention')
 const people = require('./routes/people')
+const twitter = require('./routes/twitter')
 
 const app = express();
 
@@ -43,6 +44,7 @@ app.use('/users', users)
 app.use('/company', company)
 app.use('/convention', convention)
 app.use('/people', people)
+app.use('/twitter', twitter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

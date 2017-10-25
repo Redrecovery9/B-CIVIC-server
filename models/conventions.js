@@ -17,6 +17,9 @@ const conventionSchema = new Schema({
   description: {
     type: String,
     required: true
+  },
+  people: {
+    type: Array
   }
 })
 
