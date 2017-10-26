@@ -10,7 +10,7 @@ const peopleSchema = new Schema({
     type: String,
     required: true
   },
-  _convention: { type: Number, ref: 'convention'}
+  _convention: { type: String, ref: 'convention'}
 })
 
 
@@ -18,10 +18,6 @@ const People = module.exports= mongoose.model('people', peopleSchema)
 
 module.exports = {
   getPeople: function(callback) {
-    People.find(callback)
-  },
-
-  getAllPeople: function(callback) {
     People.find(callback)
   },
 

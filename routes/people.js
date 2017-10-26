@@ -11,15 +11,6 @@ router.get('/', (req,res) => {
   });
 })
 
-router.get('/', (req,res) => {
-  People.getAllPeople((err,people) => {
-    if(err){
-      res.json("people not found.");
-    }
-    res.json(people);
-  });
-})
-
 router.get('/:id', (req,res) => {
   let id = req.params.id;
   People.getPeopleById(id, (err,people) => {

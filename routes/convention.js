@@ -11,7 +11,7 @@ router.get('/', (req,res) => {
   });
 })
 
-router.get('/', (req,res) => {
+router.get('/all', (req,res) => {
   Convention.getAllConvention((err,conventions) => {
     if(err){
       res.json("convention not found.");
