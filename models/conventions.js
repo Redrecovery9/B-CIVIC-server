@@ -18,9 +18,7 @@ const conventionSchema = new Schema({
     type: String,
     required: true
   },
-  people: {
-    type: Array
-  }
+  people: [{ type: Schema.Types.ObjectId, ref: 'people'}]
 })
 
 

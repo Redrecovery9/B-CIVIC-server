@@ -9,7 +9,8 @@ const peopleSchema = new Schema({
   role: {
     type: String,
     required: true
-  }
+  },
+  _convention: { type: Number, ref: 'convention'}
 })
 
 

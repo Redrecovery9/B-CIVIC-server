@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var Twitter = require('twitter');
-const dotenv = require('dotenv').config()
+require('dotenv').config()
 
 
-router.post('/', function(req, res) {
+router.get('/', function(req, res) {
 
   var client = new Twitter({
     consumer_key: process.env.CONSUMER_KEY,
