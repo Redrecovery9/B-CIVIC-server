@@ -4,7 +4,7 @@ var Twitter = require('twitter');
 require('dotenv').config()
 
 
-router.get('/', function(req, res) {
+router.get('/feed', function(req, res) {
 
   var client = new Twitter({
     consumer_key: process.env.CONSUMER_KEY,
