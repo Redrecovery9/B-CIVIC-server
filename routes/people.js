@@ -5,6 +5,7 @@ const People = require('../models/people');
 router.get('/', (req,res) => {
   People.getPeople((err,people) => {
     if(err){
+      console.log(err);
       res.json("people not found.");
     }
     res.json(people);
