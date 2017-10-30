@@ -18,7 +18,7 @@ const People = module.exports= mongoose.model('people', peopleSchema)
 
 module.exports = {
   getPeople: function(callback) {
-    People.find(callback)
+    People.find(callback).populate('_convention')
   },
 
   getPeopleById: function(id, callback) {

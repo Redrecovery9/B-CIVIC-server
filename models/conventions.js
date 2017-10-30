@@ -26,11 +26,11 @@ const Convention = module.exports= mongoose.model('convention', conventionSchema
 
 module.exports = {
   getConvention: function(callback) {
-    Convention.find(callback).limit(1)
+    Convention.find(callback).populate('people').limit(1)
   },
 
   getAllConvention: function(callback) {
-    Convention.find(callback)
+    Convention.find(callback).populate('people')
   },
 
   getConventionById: function(id, callback) {
