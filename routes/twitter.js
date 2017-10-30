@@ -25,6 +25,24 @@ router.get('/feed', function(req, res) {
   });
 })
 
+router.get('/hashtag', function(req, res) {
 
+  var client = new Twitter({
+    consumer_key: process.env.CONSUMER_KEY,
+    consumer_secret: process.env.CONSUMER_SECRET,
+    access_token_key: process.env.ACCESS_TOKEN_KEY,
+    access_token_secret: process.env.ACCESS_TOKEN_SECRET
+  });
+
+  var params = {q: '#mcvaughn'}
+  client.get('search/tweets', params, function(error, tweets, response) {
+    if (!error) {
+      res.json(tweets)
+
+    }else {
+      console.log(error);
+    }
+  });
+})
 
 module.exports = router;
