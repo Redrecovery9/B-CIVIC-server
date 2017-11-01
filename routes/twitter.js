@@ -34,7 +34,7 @@ router.get('/hashtag', function(req, res) {
     access_token_secret: process.env.ACCESS_TOKEN_SECRET
   });
 
-  var params = {q: '#RTPodcast'}
+  var params = {q: '#vuejs'}
   client.get('search/tweets', params, function(error, tweets, response) {
     if (!error) {
       res.json(tweets)
